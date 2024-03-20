@@ -1,16 +1,13 @@
-import Feed from "./components/feed";
-import Navbar from "./components/navbar";
-import Sidebar from "./components/sidebar";
+import Feed from "./components/Feed";
+import Navbar from "./components/Navbar";
+import Sidebar from "./components/Sidebar";
 
 function App() {
   return (
     <>
-      <div>
-        <h1>App</h1>
-        <Navbar />
-        <Sidebar />
-        <Feed />
-      </div>
+      <Navbar />
+      <Sidebar />
+      <Feed />
     </>
   );
 }
