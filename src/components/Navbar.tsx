@@ -1,6 +1,6 @@
 function Navbar() {
   return (
-    <nav className="navbar">
+    <nav>
       <ul>
         <li>books</li>
         <li>search</li>
