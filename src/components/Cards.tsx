@@ -16,8 +16,8 @@ function Cards({ url }: { url: string }) {
     const options = {
       method: "GET",
       headers: {
-        "X-RapidAPI-Key": "2c046126b3msh49e1c5bc308fe4cp1d87ebjsn7f024c9e00ed",
-        "X-RapidAPI-Host": "book-finder1.p.rapidapi.com"
+        "X-RapidAPI-Key": import.meta.env.VITE_RAPIDAPI_KEY as string,
+        "X-RapidAPI-Host": import.meta.env.VITE_RAPIDAPI_HOST as string
       }
     };
     try {
@@ -34,6 +34,7 @@ function Cards({ url }: { url: string }) {
 
   useEffect(() => {
     fetchData(url);
+    console.log("this runs");
   }, [url]); // Dependency array for url
 
   return (
@@ -46,7 +47,11 @@ function Cards({ url }: { url: string }) {
             key={book.work_id}
             title={book.title}
             authors={book.authors}
-            cover_url={book.published_works[0].cover_art_url}
+            cover_url={
+              book.published_works.length > 0
+                ? book.published_works[0].cover_art_url
+                : ""
+            }
           />
         ))
       )}
