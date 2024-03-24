@@ -1,8 +1,16 @@
 import { useState, useEffect } from "react";
+import Card from "./Card";
+
+interface Book {
+  work_id: string;
+  title: string;
+  authors: string[]; // Array of author names
+  published_works: { cover_art_url: string }[]; // Array with cover URL object
+}
 
 function Feed() {
   const [isLoading, setIsLoading] = useState(false);
-  const [result, setResult] = useState([]);
+  const [result, setResult] = useState<Book[]>([]);
 
   useEffect(() => {
     const url =
@@ -37,18 +45,13 @@ function Feed() {
     <div className="bg-brown-light w-[75rem]">
       <div className="bg-white-cream rounded-xl mr-8 h-[40rem] p-5 flex flex-wrap space-x-8">
         {isLoading && <p>Loading...</p>}
-        {result?.map((book) => (
-          <div key={book.work_id} className="flex space-x-4">
-            <img
-              src={book.published_works[0].cover_art_url}
-              alt={book.title}
-              className="h-[10rem] w-[7rem] rounded-lg"
-            />
-            <div>
-              <h2 className="text-xl">{book.title}</h2>
-              <p>{book.authors}</p>
-            </div>
-          </div>
+        {result?.map((book: Book) => (
+          <Card
+            key={book.work_id}
+            title={book.title}
+            authors={book.authors}
+            cover_url={book.published_works[0].cover_art_url}
+          />
         ))}
       </div>
     </div>
