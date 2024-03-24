@@ -10,11 +10,11 @@ function Sidebar() {
           <FaHouse />
           <span>Home</span>
         </li>
-        <li className="bg-white-cream mx-6 py-1 rounded-full flex justify-center items-center space-x-2">
+        <li className="bg-brown-light mx-6 py-1 rounded-full flex justify-center items-center space-x-2">
           <FaBook />
           <span>My library</span>
         </li>
-        <li className="bg-white-cream mx-6 py-1 rounded-full flex justify-center items-center space-x-2">
+        <li className="bg-brown-light mx-6 py-1 rounded-full flex justify-center items-center space-x-2">
           <FaGear />
           <span>Settings</span>
         </li>
