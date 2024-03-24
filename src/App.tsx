@@ -6,8 +6,10 @@ function App() {
   return (
     <>
       <Navbar />
-      <Sidebar />
-      <Feed />
+      <div className="flex flex-row">
+        <Sidebar />
+        <Feed />
+      </div>
     </>
   );
 }
