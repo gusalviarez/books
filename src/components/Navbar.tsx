@@ -1,3 +1,5 @@
+import { FaSearch } from "react-icons/fa";
+
 function Navbar() {
   return (
     <nav className="bg-brown-light text-brown-dark flex items-center justify-between h-[5rem] px-8">
@@ -5,11 +7,14 @@ function Navbar() {
         <a className="text-3xl" href="">
           BOOKS
         </a>
-        <input
-          className="bg-white-cream rounded-full outline-none pl-4"
-          type="text"
-          placeholder="Search..."
-        />
+        <div className="bg-white-cream flex items-center rounded-full pl-4 pr-20">
+          <FaSearch />
+          <input
+            className="bg-white-cream text-md outline-none pl-2 w-full"
+            type="text"
+            placeholder="Search for book or author..."
+          />
+        </div>
       </div>
       <ul className="flex space-x-8">
         <li>
