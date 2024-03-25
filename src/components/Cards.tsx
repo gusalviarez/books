@@ -12,30 +12,29 @@ function Cards({ url }: { url: string }) {
   const [books, setBooks] = useState<Book[]>([]);
   const [isLoading, setIsLoading] = useState(true); // Add state for loading
 
-  const fetchData = async (url: string) => {
-    const options = {
-      method: "GET",
-      headers: {
-        "X-RapidAPI-Key": import.meta.env.VITE_RAPIDAPI_KEY as string,
-        "X-RapidAPI-Host": import.meta.env.VITE_RAPIDAPI_HOST as string
+  useEffect(() => {
+    const fetchData = async (url: string) => {
+      const options = {
+        method: "GET",
+        headers: {
+          "X-RapidAPI-Key": import.meta.env.VITE_RAPIDAPI_KEY as string,
+          "X-RapidAPI-Host": import.meta.env.VITE_RAPIDAPI_HOST as string
+        }
+      };
+      try {
+        const response = await fetch(url, options);
+        const result = await response.json();
+        const data = await result.results;
+        setBooks(data);
+      } catch (error) {
+        console.error("Error fetching data: ", error);
+      } finally {
+        setIsLoading(false); // Set loading to false after fetching (success or error)
       }
     };
-    try {
-      const response = await fetch(url, options);
-      const result = await response.json();
-      const data = await result.results;
-      setBooks(data);
-    } catch (error) {
-      console.error("Error fetching data: ", error);
-    } finally {
-      setIsLoading(false); // Set loading to false after fetching (success or error)
-    }
-  };
-
-  useEffect(() => {
-    fetchData(url);
     console.log("this runs");
-  }, [url]); // Dependency array for url
+    fetchData(url);
+  }, []); // Dependency array for url
 
   return (
     <div className="flex flex-wrap space-x-8">

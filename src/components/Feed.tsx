@@ -1,15 +1,21 @@
-import Cards from "./Cards";
+import FakeCards from "./FakeCards";
 
 function Feed() {
   return (
-    <div className="bg-brown-light w-[75rem]">
-      <div className="bg-white-cream rounded-xl mr-8 h-[45rem] px-14 py-8">
+    <div className="bg-brown-light w-[75rem] h-[32.9rem]">
+      <div className="bg-white-cream rounded-xl mr-8 h-[32rem] px-14 py-8 overflow-y-scroll">
         <h2 className="text-4xl text-blue-400 pb-5 font-medium">POPULAR</h2>
-        <Cards url="https://book-finder1.p.rapidapi.com/api/search?author=Tolkien&book_type=Fiction&results_per_page=5&page=1" />
-        <h2 className="text-4xl text-blue-400 pb-5 pt-5 font-medium">
+        <FakeCards />
+        <div className="flex flex-row justify-end pt-5 text-white-cream">
+          <button className="bg-blue-400 rounded-md w-20 h-8">see all</button>
+        </div>
+        <h2 className="text-4xl text-blue-400 pb-5 pt-8 font-medium">
           YOU MAY LIKE
         </h2>
-        <Cards url="https://book-finder1.p.rapidapi.com/api/search?author=Brandon%20Sanderson&book_type=Fiction&results_per_page=5&page=1" />
+        <FakeCards />
+        <div className="flex flex-row justify-end pt-5 text-white-cream">
+          <button className="bg-blue-400 rounded-md w-20 h-8">see all</button>
+        </div>
       </div>
     </div>
   );

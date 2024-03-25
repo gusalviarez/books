@@ -19,3 +19,24 @@
 html {
   font-family: "Poppins", sans-serif;
 }
+
+/* ------------- scrollbar ----------------*/
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #fcf8f5;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #76644f;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #98866f;
+}

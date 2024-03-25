@@ -7,7 +7,7 @@ function Card({
   authors: string[];
   cover_url: string;
 }) {
-  const MAX_TITLE_LENGTH = 20;
+  const MAX_TITLE_LENGTH = 17;
 
   const truncatedTitle =
     title.length > MAX_TITLE_LENGTH
@@ -15,14 +15,14 @@ function Card({
       : title;
 
   return (
-    <div className="flex flex-col justify-start items-start space-x-4">
+    <div className="flex flex-col space-x-4">
       <img
         src={cover_url}
         alt={title}
-        className="h-[14rem] w-[10rem] rounded-lg"
+        className="h-[16rem] w-[10rem] rounded-lg"
       />
-      <p className="text-md text-blue-900">{truncatedTitle}</p>
-      <p className="text-xs">{authors}</p>
+      <span className="text-md text-blue-900">{truncatedTitle}</span>
+      <span className="text-xs">{authors}</span>
     </div>
   );
 }
