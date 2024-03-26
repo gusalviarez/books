@@ -6,7 +6,7 @@ import { Link, useLocation } from "react-router-dom";
 function Sidebar() {
   const location = useLocation();
 
-  const isActive = (path) => {
+  const isActive = (path: string) => {
     return location.pathname === path; // Check if current path matches
   };
 
