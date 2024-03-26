@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Root from "./routes/root";
 import Library from "./routes/library";
 import Sidebar from "./components/Sidebar";
+import Settings from "./routes/settings";
 
 function App() {
   return (
@@ -13,6 +14,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Root />} />
           <Route path="/library" element={<Library />} />
+          <Route path="/settings" element={<Settings />} />
+          <Route path="/books/:bookId" element={<Settings />} />
         </Routes>
       </div>
     </>
