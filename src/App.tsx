@@ -1,8 +1,8 @@
 import Navbar from "./components/Navbar";
-import Sidebar from "./components/Sidebar";
 import { Routes, Route } from "react-router-dom";
 import Root from "./routes/root";
 import Library from "./routes/library";
+import Sidebar from "./components/Sidebar";
 
 function App() {
   return (
