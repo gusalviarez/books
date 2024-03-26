@@ -1,7 +1,7 @@
-import FakeCards from "./FakeCards";
-import SeeAllButton from "./SeeAllButton";
+import FakeCards from "../components/Cards";
+import SeeAllButton from "../components/SeeAllButton";
 
-function Feed() {
+function Root() {
   return (
     <div className="bg-brown-light w-[75rem] h-[32.9rem]">
       <div className="bg-white-cream rounded-xl mr-8 h-[32rem] px-14 py-8 overflow-y-scroll">
@@ -18,4 +18,4 @@ function Feed() {
   );
 }
 
-export default Feed;
+export default Root;

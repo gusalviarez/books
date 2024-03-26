@@ -1,6 +1,8 @@
-import Feed from "./components/Feed";
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
+import { Routes, Route } from "react-router-dom";
+import Root from "./routes/root";
+import Library from "./routes/library";
 
 function App() {
   return (
@@ -8,7 +10,10 @@ function App() {
       <Navbar />
       <div className="flex flex-row">
         <Sidebar />
-        <Feed />
+        <Routes>
+          <Route path="/" element={<Root />} />
+          <Route path="/library" element={<Library />} />
+        </Routes>
       </div>
     </>
   );

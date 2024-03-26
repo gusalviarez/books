@@ -1,28 +1,17 @@
-function Card({
-  title,
-  authors,
-  cover_url
-}: {
-  title: string;
-  authors: string[];
-  cover_url: string;
-}) {
-  const MAX_TITLE_LENGTH = 17;
-
-  const truncatedTitle =
-    title.length > MAX_TITLE_LENGTH
-      ? title.slice(0, MAX_TITLE_LENGTH) + "..."
-      : title;
-
+function Card() {
   return (
-    <div className="flex flex-col space-x-4">
-      <img
-        src={cover_url}
-        alt={title}
-        className="h-[16rem] w-[10rem] rounded-lg"
-      />
-      <span className="text-md text-blue-900">{truncatedTitle}</span>
-      <span className="text-xs">{authors}</span>
+    <div className="h-[16rem] w-[10rem]">
+      <div className="p-2 hover:bg-blue-100 rounded-xl border-blue-400 hover:border-2">
+        <div className="flex flex-col items-center justify-center">
+          <img
+            src="https://books.google.co.ve/books/publisher/content?id=xKk4AwAAQBAJ&pg=PP1&img=1&zoom=3&hl=en&bul=1&sig=ACfU3U1VEl36I200TBcyiqXBjSP1_VSBIg&w=1280"
+            alt="book cover"
+            className="h-[14rem] w-[9rem] rounded-lg"
+          />
+          <p>Book name</p>
+          <p>Author name</p>
+        </div>
+      </div>
     </div>
   );
 }
