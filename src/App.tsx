@@ -4,6 +4,7 @@ import Root from "./routes/root";
 import Library from "./routes/library";
 import Sidebar from "./components/Sidebar";
 import Settings from "./routes/settings";
+import Books from "./routes/books";
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
           <Route path="/" element={<Root />} />
           <Route path="/library" element={<Library />} />
           <Route path="/settings" element={<Settings />} />
-          <Route path="/books/:bookId" element={<Settings />} />
+          <Route path="/books/:bookId" element={<Books />} />
         </Routes>
       </div>
     </>
